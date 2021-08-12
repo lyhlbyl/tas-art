@@ -1,0 +1,3 @@
+[submodule "contrib/abc/ABC_Datalog"]
+	path = contrib/abc/ABC_Datalog
+	url = https://github.com/XuerLi/ABC_Datalog
