@@ -1,0 +1,336 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rv",
+				"rvv13_1"
+			],
+			[
+				"Sec",
+				"section"
+			],
+			[
+				"enum",
+				"enum"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"intall",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/yl2060/Workspace/tas-art/lp",
+		"/Users/yl2060/Workspace/tas-art/lp/regulation"
+	],
+	"file_history":
+	[
+		"/Users/yl2060/Workspace/tas-art/lp/regulation/demo.pl",
+		"/Users/yl2060/Workspace/tas-art/lp/regulation/dutch.pl",
+		"/Users/yl2060/Workspace/tas-art/lp/regulation/opendrive.pl",
+		"/Users/yl2060/Workspace/tas-art/lp/regulation/using_road.pl",
+		"/Users/yl2060/Workspace/elp/test.pl",
+		"/Users/yl2060/Workspace/elp/thief.pl",
+		"/Users/yl2060/Workspace/elp/strong.pl",
+		"/Users/yl2060/Workspace/capture/csp/SF_C_34.stub.csp",
+		"/Users/yl2060/Workspace/prj-capture",
+		"/Users/yl2060/Desktop/capture/lp/top_secret.pl",
+		"/Users/yl2060/Desktop/capture/lp/demo.pl",
+		"/Users/yl2060/Desktop/capture/lp/demo.lp",
+		"/Users/yl2060/Desktop/capture/lp/trip462.pdf",
+		"/Users/yl2060/Downloads/course-main/main.tex",
+		"/Users/yl2060/Google Drive/Papers/TODO/NML/Commonsense Reasoning An Event Calculus Based Approach/content.md",
+		"/Users/yl2060/Desktop/contents",
+		"/Users/yl2060/Workspace/ros/docker/ins.md",
+		"/Users/yl2060/Desktop/comments",
+		"/private/var/folders/8g/tp7b5yy535ncd83g2llqnsn11z_rxc/T/com.apple.mail/com.apple.mail/compose/attach/ispin-docker-readme.md",
+		"/Users/yl2060/Workspace/docker/ispin/ispin-docker-readme.md",
+		"/Users/yl2060/Workspace/tas-theory/scenarios-synthesis/main.tex",
+		"/Users/yl2060/Desktop/map-format/ASAM_OpenDRIVE_BS_V1-7-0/additional_content/uml_model/ASAM_OpenDRIVE.EAP",
+		"/Users/yl2060/Desktop/map-format/ASAM_OpenDRIVE_BS_V1-7-0/additional_content/uml_model/xsd_schema/opendrive_17_signal.xsd",
+		"/Users/yl2060/Workspace/tas-theory/ieee-template/main.tex",
+		"/Users/yl2060/Workspace/tas-theory/overleaf-git.md",
+		"/Users/yl2060/ispin.tcl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/tweetynh.pl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/superPenguinh.pl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/lane.pl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/dutch.pl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/familiesh copy.pl",
+		"/Users/yl2060/Workspace/tas-art/contrib/abc/ABC_Datalog/evaluation theories/parenth.pl",
+		"/Users/yl2060/Desktop/claim",
+		"/Users/yl2060/Desktop/review",
+		"/Users/yl2060/Workspace/tas-theory/bbn-generics-reasoning/main.tex",
+		"/Users/yl2060/Workspace/tas-theory/bbn-non-mon-regulations/main.tex",
+		"/Users/yl2060/Desktop/untitled folder/readme.md",
+		"/Users/yl2060/Workspace/docker/ispin/Dockerfile",
+		"/Users/yl2060/Desktop/meeting note: PRISM and beyond",
+		"/Users/yl2060/Workspace/tas-theory/bbn-learn-from-regulation-versioning/main.tex",
+		"/Users/yl2060/Workspace/tas-theory/traffic-regulations-reasoning/main.tex",
+		"/Users/yl2060/Workspace/tas-theory/traffic-regulations-reasoning/main.log",
+		"/Users/yl2060/Workspace/note-template/evaluation.tex",
+		"/Users/yl2060/Workspace/tas-theory/dutchlaw/main.tex",
+		"/Users/yl2060/Applications/prism-4.7-osx64/README.md",
+		"/Users/yl2060/Library/Application Support/Sublime Text/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/yl2060/Library/Application Support/Sublime Text/Packages/User/LaTeXing.sublime-settings",
+		"/Users/yl2060/Library/Application Support/Sublime Text/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/yl2060/Workspace/tas-theory/dutchlaw/main.bbl"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"rw13_1",
+			"rw3",
+			"keep_left"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"rvv13_1",
+			"rvv3",
+			"keep_right"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/Users/yl2060/Workspace/tas-art/lp"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 108.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 162.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

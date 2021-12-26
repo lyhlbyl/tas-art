@@ -33,7 +33,8 @@ def util_del_theory_file(src_path: str, theory_name: str):
 
 if __name__ == '__main__':
     if_clean_thy = False
-    thy_name = 'familiesh.pl'
+    thy_name = 'superPenguinh.pl'
+    # thy_name = 'familiesh.pl'
     abc_main_path = f'{src_path}/main'
     abc_thy_path = f'{src_path}/{thy_name}'
     q = 'abc'
