@@ -1,6 +1,6 @@
-% family.lp from Chapter 4, Section 4.1.1
-% Last Modified: 2/6/14
-% Basic family relationships
+%% family.lp from Chapter 4, Section 4.1.1
+%% Last Modified: 2/6/14
+%% Basic family relationships
 
 person(john).
 person(sam).
@@ -47,3 +47,14 @@ brother(X,Y) :- gender_of(X,male),
 -father(X,Y) :- person(X), person(Y),
                 not father(X,Y).
                 
+
+%% --- exercise from here
+%% 1 - 2 define brother and uncle
+brother(X,Y) :- person(X), person(Y), 
+                gender_of(X,male), gender_of(Y,male),
+                parent(Z,X), parent(Z,Y), X != Y.
+
+uncle(X,Y) :-   person(Y), 
+                parent(Z,Y), brother(X,Z).
+
+#show brother/2.
