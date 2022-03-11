@@ -1,4 +1,4 @@
-sys_var(a;b;c).
+%% sys_var(a;b;c).
 
 %% exv(a).
 %% -exv(X) :- sys_var(X), not exv(X).
@@ -26,3 +26,7 @@ sys_var(a;b;c).
 
 %% #show has_exv/1.
 
+p(a).
+
+q :- p(X), p(Y), not X = Y.
+%% b.

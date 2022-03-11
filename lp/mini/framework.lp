@@ -7,17 +7,28 @@
 %% inherit status unless being changed.
 sys_status(Var, Val, I+1) :- 
 	sys_var(Var), sys_status(Var, Val, I), 
-	step(I), step(I+1), event(X, I), not -status_remains(Var, I+1) .
+	step(I), step(I+1), sys_evt(X, I), not -status_remains(Var, I+1) .
 -status_remains(X, I) :- status_trans(sys_status(X, V, I)).
+-status_remains(X, I) :- exvar(X), step(I), dom_impact(sys_status(X, SV, I)).
+
+%% status transition makes immediate change only without exvars	
+sys_status(X, V, I) :- status_trans(sys_status(X, V, I)), -exvar(X).
+sys_status(X, SV, I) :- 
+	status_trans(sys_status(X, V, I)), exvar(X), step(I),
+	dom_impact(sys_status(X, SV, I)), not V = SV.
+
+
+
+%% :- sys_status(Var, Val0, I), sys_status(Var, Val1, I), not Val0 = Val1. 
 %% status_remains(X, I) :- not -status_remains(X, I), step(I), sys_var(X).
 
-%% For each event, it can ocuur in the next step, keep generate steps until violation happens
-occurs(X, I) | -occurs(X, I) :- event(X, I), step(I), allHolds(I).
+%% For each sys_evt, it can ocuur in the next step, keep generate steps until violation happens
+occurs(X, I) | -occurs(X, I) :- sys_evt(X, I), step(I), allHolds(I).
 -allHolds(I) :- -holds(Rq, I), req(Rq, _), step(I).
 allHolds(I) :- not -allHolds(I), step(I).
 
 
-%% But events can only occur in an atomic way
+%% But sys_evts can only occur in an atomic way
 :- occurs(X, I), occurs(Y, I), X != Y.
 
 %% delare exogenous variables, and we declare perfect knowledge of exogenous variable
@@ -36,7 +47,7 @@ has_exvar(R) :- if_has_exvar(R, sys_vars(V0)), exvar(V0).
 
 %% %% ----- Req Def -------
 %% note that only those subgoal that has not exogenous variables are considered as hyp.
-%% hyp means the constraint is assumed to be satisfied by event definition, 
+%% hyp means the constraint is assumed to be satisfied by sys_evt definition, 
 %% Thus, thoes traces that violate hpy will not be generated.
 holds(X, I) :- step(I), req(X, hyp), not -holds(X, I).
 -holds(X, I) :- step(I), req(X, hyp), not holds(X, I).
@@ -56,11 +67,9 @@ req(X, goal) :- req_decl(X), req_has_subreq(X).
 %% leaf node
 req(X, subgoal) :- req_decl(X), -req_has_subreq(X).
 %% only those leaf node requirement without exvars will be turned into hyp, 
-%% i.e. constraint maintainted by events
+%% i.e. constraint maintainted by sys_evts
 req(X, hyp) :- req(X, subgoal), -has_exvar(X).
 
-%% status transition makes immediate change only without exvars
-sys_status(X, V, I) :- status_trans(sys_status(X, V, I)), -exvar(X).
 %% ----- Step Def -------
 step(0..max_step).
 

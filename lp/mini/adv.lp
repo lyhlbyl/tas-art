@@ -1,4 +1,4 @@
-#include "framework.pl".
+#include "framework.lp".
 
 #const max_step=2.
 
@@ -31,28 +31,46 @@ req_parent_of(g1d3, g1d3d2).
 -holds(g1d3d2, I) :- step(I), sys_status(sensorHigh, true, I), sys_status(doorLocked, false, I).
 
 
-%% ----- Event Def -------
+%% ----- sys_evt Def -------
 %% Template: 
-%% event(Event, I) :- precond.
-%% postcond(_, I+1) :- occur(Event, I).
+%% sys_evt(sys_evt, I) :- precond.
+%% postcond(_, I+1) :- occur(sys_evt, I).
 %% --------------------------
-event(set_moving, I) :- step(I).
+sys_evt(set_moving, I) :- step(I).
 status_trans(sys_status(moving, true, I+1)) :- step(I), step(I+1), occurs(set_moving, I).
 
-event(unset_moving, I) :- step(I).
+sys_evt(unset_moving, I) :- step(I).
 status_trans(sys_status(moving, false, I+1)) :- step(I), step(I+1), occurs(unset_moving, I).
 
-event(set_doorLocked, I) :- step(I).
+sys_evt(set_doorLocked, I) :- step(I).
 status_trans(sys_status(doorLocked, true, I+1)) :- step(I), step(I+1), occurs(set_doorLocked, I).
-event(unset_doorLocked, I) :- step(I).
+sys_evt(unset_doorLocked, I) :- step(I).
 status_trans(sys_status(doorLocked, false, I+1)) :- step(I), step(I+1), occurs(unset_doorLocked, I).
 
-event(set_sensorHigh, I) :- step(I).
+sys_evt(set_sensorHigh, I) :- step(I).
 status_trans(sys_status(sensorHigh, true, I+1)) :- step(I), step(I+1), occurs(set_sensorHigh, I).
-event(unset_sensorHigh, I) :- step(I).
+sys_evt(unset_sensorHigh, I) :- step(I).
 status_trans(sys_status(sensorHigh, false, I+1)) :- step(I), step(I+1), occurs(unset_sensorHigh, I).
 
+
+%% ----- Domain Def -------
+%% Template: 
+%% sys_evt(sys_evt, I) :- precond.
+%% postcond(_, I+1) :- occur(sys_evt, I).
+%% --------------------------
 %% %% encoding domain
+dom_var(-brokenWire).
+dom_var(sensor2Wire).
+dom_var(sensorOn).
+
+dom_impact(sys_status(sensorHigh, false, I)) :- dom_status(brokenWire, true, I), step(I).
+dom_impact(sys_status(sensorHigh, false, I)) :- dom_status(sensor2Wire, false, I), step(I).
+dom_impact(sys_status(sensorHigh, false, I)) :- dom_status(sensorOn, false, I), step(I).
+
+dom_status(brokenWire, true, I+1), dom_status(brokenWire, false, I+1) :- step(I), step(I+1).
+dom_status(sensor2Wire, true, I+1), dom_status(sensor2Wire, false, I+1) :- step(I), step(I+1).
+dom_status(sensorOn, true, I+1), dom_status(sensorOn, false, I+1) :- step(I), step(I+1).
+
 %% -brokenWire :- sensorHigh.
 %% sensor2Wire :- sensorHigh.
 %% sensorOn :- sensorHigh.
@@ -70,14 +88,18 @@ sys_status(sensorHigh, true, 0).
 #show occurs/2.
 #show -holds/2.
 %% #show sys_status/3.
-%% #show eval/1.
 %% #show status_trans/1.
 %% #show req/2.
+%% #show dom_status/3.
+#show dom_impact/1.
 
 
+%% -------- Demo
+%% Step 1: check the vialation of req. should be unsatisfied.
 %% ----- check Def -------
 show_trace :- -holds(X, I), req(X, goal), step(I).
 :- not show_trace.
 
-%% exvar(sensorHigh).
+%% Step 2: introduce sensorHigh as exnogenous variable
+exvar(sensorHigh).
 
