@@ -1,4 +1,4 @@
-#include "framework.lp".
+#include "../framework.lp".
 
 #const max_step=2.
 
