@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+  <FileHeader author="The MathWorks" date="2023-11-15T08:22:41" description="Sample Scenario" revMajor="1" revMinor="1"/>
+  <Catalog name="tjunction_VehicleCatalog">
+    <Vehicle name="Car" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="-35.9507" y="3.0147" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="-34.5007" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="-37.3007" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+    <Vehicle name="Car1" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="-2.7211" y="-37.707" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="-1.2711" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="-4.0711" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+    <Vehicle name="Car2" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="-2.622" y="-53.5962" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="-1.172" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="-3.972" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+    <Vehicle name="Car3" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="-3.25" y="10.8" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="-1.8" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="-4.6" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+  </Catalog>
+</OpenSCENARIO>

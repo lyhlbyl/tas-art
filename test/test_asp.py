@@ -66,7 +66,7 @@ if __name__ == '__main__':
     ret, step = None, 1
 
     # try solving until max number of steps or until solved
-    while step <= max_step and (step == 1 or not ret.satisfiable):
+    while step <= max_step:
         parts = []
         # handle #external call
         control.release_external(clingo.Function("query", [clingo.Number(step - 1)]))
@@ -79,4 +79,6 @@ if __name__ == '__main__':
         print(f"Solving step: t={step}")
         ret = control.solve(on_model=on_model)
         print(f"Returned: {ret}")
+        if ret.satisfiable:
+            break
         step += 1

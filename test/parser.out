@@ -1,0 +1,291 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COLON
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> clauses
+Rule 2     clauses -> clause clauses
+Rule 3     clauses -> <empty>
+Rule 4     clause -> fact
+Rule 5     clause -> rule
+Rule 6     fact -> ATOM LPAREN terms RPAREN DOT
+Rule 7     rule -> predicate ARROW predicate DOT
+Rule 8     predicate -> ATOM LPAREN terms RPAREN
+Rule 9     terms -> term COMMA terms
+Rule 10    terms -> term
+Rule 11    terms -> <empty>
+Rule 12    term -> ATOM
+Rule 13    term -> VARIABLE
+
+Terminals, with rules where they appear
+
+ARROW                : 7
+ATOM                 : 6 8 12
+COLON                : 
+COMMA                : 9
+DOT                  : 6 7
+LPAREN               : 6 8
+RPAREN               : 6 8
+VARIABLE             : 13
+error                : 
+
+Nonterminals, with rules where they appear
+
+clause               : 2
+clauses              : 1 2
+fact                 : 4
+predicate            : 7 7
+program              : 0
+rule                 : 5
+term                 : 9 10
+terms                : 6 8 9
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . clauses
+    (2) clauses -> . clause clauses
+    (3) clauses -> .
+    (4) clause -> . fact
+    (5) clause -> . rule
+    (6) fact -> . ATOM LPAREN terms RPAREN DOT
+    (7) rule -> . predicate ARROW predicate DOT
+    (8) predicate -> . ATOM LPAREN terms RPAREN
+
+    $end            reduce using rule 3 (clauses -> .)
+    ATOM            shift and go to state 6
+
+    program                        shift and go to state 1
+    clauses                        shift and go to state 2
+    clause                         shift and go to state 3
+    fact                           shift and go to state 4
+    rule                           shift and go to state 5
+    predicate                      shift and go to state 7
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> clauses .
+
+    $end            reduce using rule 1 (program -> clauses .)
+
+
+state 3
+
+    (2) clauses -> clause . clauses
+    (2) clauses -> . clause clauses
+    (3) clauses -> .
+    (4) clause -> . fact
+    (5) clause -> . rule
+    (6) fact -> . ATOM LPAREN terms RPAREN DOT
+    (7) rule -> . predicate ARROW predicate DOT
+    (8) predicate -> . ATOM LPAREN terms RPAREN
+
+    $end            reduce using rule 3 (clauses -> .)
+    ATOM            shift and go to state 6
+
+    clause                         shift and go to state 3
+    clauses                        shift and go to state 8
+    fact                           shift and go to state 4
+    rule                           shift and go to state 5
+    predicate                      shift and go to state 7
+
+state 4
+
+    (4) clause -> fact .
+
+    ATOM            reduce using rule 4 (clause -> fact .)
+    $end            reduce using rule 4 (clause -> fact .)
+
+
+state 5
+
+    (5) clause -> rule .
+
+    ATOM            reduce using rule 5 (clause -> rule .)
+    $end            reduce using rule 5 (clause -> rule .)
+
+
+state 6
+
+    (6) fact -> ATOM . LPAREN terms RPAREN DOT
+    (8) predicate -> ATOM . LPAREN terms RPAREN
+
+    LPAREN          shift and go to state 9
+
+
+state 7
+
+    (7) rule -> predicate . ARROW predicate DOT
+
+    ARROW           shift and go to state 10
+
+
+state 8
+
+    (2) clauses -> clause clauses .
+
+    $end            reduce using rule 2 (clauses -> clause clauses .)
+
+
+state 9
+
+    (6) fact -> ATOM LPAREN . terms RPAREN DOT
+    (8) predicate -> ATOM LPAREN . terms RPAREN
+    (9) terms -> . term COMMA terms
+    (10) terms -> . term
+    (11) terms -> .
+    (12) term -> . ATOM
+    (13) term -> . VARIABLE
+
+    RPAREN          reduce using rule 11 (terms -> .)
+    ATOM            shift and go to state 11
+    VARIABLE        shift and go to state 14
+
+    terms                          shift and go to state 12
+    term                           shift and go to state 13
+
+state 10
+
+    (7) rule -> predicate ARROW . predicate DOT
+    (8) predicate -> . ATOM LPAREN terms RPAREN
+
+    ATOM            shift and go to state 16
+
+    predicate                      shift and go to state 15
+
+state 11
+
+    (12) term -> ATOM .
+
+    COMMA           reduce using rule 12 (term -> ATOM .)
+    RPAREN          reduce using rule 12 (term -> ATOM .)
+
+
+state 12
+
+    (6) fact -> ATOM LPAREN terms . RPAREN DOT
+    (8) predicate -> ATOM LPAREN terms . RPAREN
+
+    RPAREN          shift and go to state 17
+
+
+state 13
+
+    (9) terms -> term . COMMA terms
+    (10) terms -> term .
+
+    COMMA           shift and go to state 18
+    RPAREN          reduce using rule 10 (terms -> term .)
+
+
+state 14
+
+    (13) term -> VARIABLE .
+
+    COMMA           reduce using rule 13 (term -> VARIABLE .)
+    RPAREN          reduce using rule 13 (term -> VARIABLE .)
+
+
+state 15
+
+    (7) rule -> predicate ARROW predicate . DOT
+
+    DOT             shift and go to state 19
+
+
+state 16
+
+    (8) predicate -> ATOM . LPAREN terms RPAREN
+
+    LPAREN          shift and go to state 20
+
+
+state 17
+
+    (6) fact -> ATOM LPAREN terms RPAREN . DOT
+    (8) predicate -> ATOM LPAREN terms RPAREN .
+
+    DOT             shift and go to state 21
+    ARROW           reduce using rule 8 (predicate -> ATOM LPAREN terms RPAREN .)
+
+
+state 18
+
+    (9) terms -> term COMMA . terms
+    (9) terms -> . term COMMA terms
+    (10) terms -> . term
+    (11) terms -> .
+    (12) term -> . ATOM
+    (13) term -> . VARIABLE
+
+    RPAREN          reduce using rule 11 (terms -> .)
+    ATOM            shift and go to state 11
+    VARIABLE        shift and go to state 14
+
+    term                           shift and go to state 13
+    terms                          shift and go to state 22
+
+state 19
+
+    (7) rule -> predicate ARROW predicate DOT .
+
+    ATOM            reduce using rule 7 (rule -> predicate ARROW predicate DOT .)
+    $end            reduce using rule 7 (rule -> predicate ARROW predicate DOT .)
+
+
+state 20
+
+    (8) predicate -> ATOM LPAREN . terms RPAREN
+    (9) terms -> . term COMMA terms
+    (10) terms -> . term
+    (11) terms -> .
+    (12) term -> . ATOM
+    (13) term -> . VARIABLE
+
+    RPAREN          reduce using rule 11 (terms -> .)
+    ATOM            shift and go to state 11
+    VARIABLE        shift and go to state 14
+
+    terms                          shift and go to state 23
+    term                           shift and go to state 13
+
+state 21
+
+    (6) fact -> ATOM LPAREN terms RPAREN DOT .
+
+    ATOM            reduce using rule 6 (fact -> ATOM LPAREN terms RPAREN DOT .)
+    $end            reduce using rule 6 (fact -> ATOM LPAREN terms RPAREN DOT .)
+
+
+state 22
+
+    (9) terms -> term COMMA terms .
+
+    RPAREN          reduce using rule 9 (terms -> term COMMA terms .)
+
+
+state 23
+
+    (8) predicate -> ATOM LPAREN terms . RPAREN
+
+    RPAREN          shift and go to state 24
+
+
+state 24
+
+    (8) predicate -> ATOM LPAREN terms RPAREN .
+
+    DOT             reduce using rule 8 (predicate -> ATOM LPAREN terms RPAREN .)
+

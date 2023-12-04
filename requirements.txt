@@ -1,2 +1,14 @@
 pyswip
 clingo
+clyngor
+pyparsing
+openai
+tiktoken
+imandra
+scenariogeneration
+
+# for commonroad lib
+jupyter
+matplotlib<3.6
+commonroad-io>=2023.1
+sumocr>=2023.1
