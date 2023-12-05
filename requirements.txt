@@ -2,10 +2,9 @@ pyswip
 clingo
 clyngor
 pyparsing
-openai
 tiktoken
 imandra
-scenariogeneration
+
 
 # for commonroad lib
 jupyter
