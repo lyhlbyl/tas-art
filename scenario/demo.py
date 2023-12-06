@@ -30,8 +30,8 @@ def get_color_gradient(n, c1 = '#FF0000', c2='#000FFF'):
 # Yuhui: note the mathplotlib need to be < 3.6. See in the requirements.txt
 # generate path of the file to be opened, also the following fix for latent error.
 from commonroad.visualization.draw_params import MPDrawParams
-# file_path = "./examples/ZAM_Zip-1_35_T-1.xml"
-file_path = "./examples/ZAM_Tjunction-1_307_T-1.xml"
+file_path = "./examples/ZAM_Zip-1_35_T-1.xml"
+# file_path = "./examples/ZAM_Tjunction-1_307_T-1.xml"
 if __name__ == '__main__':
     # read in the scenario and planning problem set
     scenario, planning_problem_set = CommonRoadFileReader(file_path).open()
@@ -78,4 +78,9 @@ if __name__ == '__main__':
             c = color_idx[pos.time_step - 1]
             hole = plt.Circle((pos.position[0],pos.position[1]), safe_distance, color=c, zorder=10)
             ax.add_artist(hole)
+    # plot init ego pos
+    egp_pos = list(planning_problem_set.planning_problem_dict.values())[0].initial_state.position
+    ego = plt.Circle((egp_pos[0], egp_pos[1]), 1, zorder=20)
+    ax.add_artist(ego)
+
     plt.show()
